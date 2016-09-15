@@ -5,8 +5,8 @@
 // Config app
 var port = 81;
 app
-    .use('/api/internacion', require('../api-internacion/app.js'))
-    .use('/app/internacion', require('../app-internacion/app.js'))
+    .use('/', require('../api/index.js'))
+    .use('/', require('../app/app.js'))
     .listen(port, function() {
         console.log('vApp running on port %d on %s mode', port, app.get('env'));
     });
