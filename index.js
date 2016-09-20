@@ -2,11 +2,13 @@
     path = require('path'),
     app = express();
 
-// Config app
+    // Config app, VERIFICAR que index.js de la API NO TENGA LISTEN (app.listen)
+
 var port = 81;
 app
     .use('/', require('../api/index.js'))
-    .use('/', require('../app/app.js'))
+    //.use('/', require('../app/app.js'))
+    .use('/', require('./app/tablasMaestras.js'))
     .listen(port, function() {
         console.log('vApp running on port %d on %s mode', port, app.get('env'));
     });
