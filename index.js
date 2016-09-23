@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var express = require('express'),
     path = require('path'),
     app = express();
@@ -9,6 +10,19 @@ app
     //.use('/auth', require('../auth/app.js'))
     .use('/api/internacion', require('../api-internacion/app.js'))
     .use('/app/internacion', require('../app-internacion/app.js'))
+=======
+    var express = require('express'),
+    path = require('path'),
+    app = express();
+
+    // Config app, VERIFICAR que index.js de la API NO TENGA LISTEN (app.listen)
+
+var port = 81;
+app
+    .use('/', require('../api/index.js'))
+    //.use('/', require('../app/app.js'))
+    .use('/', require('./app/tablasMaestras.js'))
+>>>>>>> develop
     .listen(port, function() {
         console.log('vApp running on port %d on %s mode', port, app.get('env'));
     });
@@ -49,4 +63,8 @@ app.use(function(err, req, res, next) {
 
 //  View engine setup
 app.set('views', path.join(__dirname, 'views'));
+<<<<<<< HEAD
 app.set('view engine', 'ejs');
+=======
+app.set('view engine', 'ejs');
+>>>>>>> develop
