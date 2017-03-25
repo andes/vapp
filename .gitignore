@@ -1,0 +1,19 @@
+# Archivos de configuración
+config.ts
+
+# Logs
+logs
+**/*.log
+**/*.log*
+**/*.js
+**/*.map
+*.js
+**.js
+*.map
+**.map
+
+# Dependency directories
+node_modules
+typings
+typings/*
+.vscode

@@ -1,22 +1,28 @@
 {
-  "name": "vapp",
-  "version": "1.0.0",
-  "description": "WebServer con ruteo de apps y api",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andes/vapp.git"
-  },
-  "author": "Team Andes",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/andes/vapp/issues"
-  },
-  "homepage": "https://github.com/andes/vapp#readme",
-  "dependencies": {
-    "express": "^4.14.0"
-  }
+    "name": "vapp",
+    "version": "1.1.0",
+    "description": "Servidor web principal para Andes",
+    "main": "index.js",
+    "dependencies": {
+        "@types/express": "^4.0.35",
+        "@types/node": "^6.0.42",
+        "express": "^4.14.0"
+    },
+    "scripts": {
+        "startNode": "tsc && gulp && concurrently \"npm run node\" ",
+        "start": "concurrently \"npm run tsc:w\" \"npm run node\" ",
+        "node": "nodemon ./index.js",
+        "tsc": "tsc",
+        "tsc:w": "tsc -w"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andes/vapp.git"
+    },
+    "author": "Team Andes",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/andes/vapp/issues"
+    },
+    "homepage": "https://github.com/andes/vapp#readme"
 }
