@@ -1,6 +1,3 @@
-# vapp
-Servidor web para routing de aplicaciones y APIs 
-
 ![ANDES](https://github.com/andes/andes.github.io/raw/master/images/logo.png)
 
 ## vApp
