@@ -17,3 +17,8 @@ node_modules
 typings
 typings/*
 .vscode
+
+key.pem
+cert.pem
+csr.pem
+server.crt
