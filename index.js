@@ -2,6 +2,7 @@
 var path = require("path");
 var express = require("express");
 var initialize_1 = require("../api/initialize");
+var websockets_1 = require("../api/websockets");
 // Inicializa Express
 var app = express();
 // Inicializa la APP
@@ -23,8 +24,9 @@ app.all('*', function (req, res) {
     }
 });
 // Inicia el servidor
-app.listen(80, function () {
+var server = app.listen(80, function () {
     console.log('Inicio de ANDES en el puerto 80');
 });
+websockets_1.Websockets.initialize(server);
 module.exports = app;
 //# sourceMappingURL=index.js.map
