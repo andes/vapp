@@ -1,6 +1,7 @@
 import * as path from 'path';
 import * as express from 'express';
 import { initAPI } from '../api/initialize';
+import { Websockets } from '../api/websockets';
 
 // Inicializa Express
 let app = express();
@@ -26,7 +27,9 @@ app.all('*', (req: any, res: any) => {
 });
 
 // Inicia el servidor
-app.listen(80, function () {
+let server = app.listen(80, function () {
     console.log('Inicio de ANDES en el puerto 80');
 });
+Websockets.initialize(server);
+
 export = app;
