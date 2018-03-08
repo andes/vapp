@@ -23,7 +23,7 @@ COPY --from=api /usr/src/api ./api
 
 WORKDIR /usr/src/andes/vapp
 
-COPY package.json ./
+COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
 
