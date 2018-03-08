@@ -7,7 +7,7 @@ RUN tsc
 
 # APP Build
 FROM andesnqn/app as app 
-RUN ng build --prod 
+RUN npm run ng -- build --prod 
 
 FROM node:${NODE_VERSION}
 
