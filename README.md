@@ -29,6 +29,10 @@ node index.js
 
 ```bash
 docker build -t andesnqn/vapp .
+
+or 
+
+docker build -t andesnqn/vapp --build-arg ENVIRONMENT=develop .
 ```
 
 ### Run images

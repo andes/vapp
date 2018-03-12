@@ -1,5 +1,6 @@
 
 ARG NODE_VERSION=8.9-alpine
+ARG ENVIRONMENT=production
 
 # API Build
 FROM andesnqn/api as api
@@ -7,11 +8,11 @@ RUN tsc
 
 # APP Build
 FROM andesnqn/app as app 
-RUN npm run ng -- build --prod 
+RUN if [ "$ENVIRONMENT" = "production" ] ; then npm run ng -- build --prod; else npm run ng -- build; fi
 
 FROM node:${NODE_VERSION}
 
-RUN npm install -g typescript @angular/cli@1.4.0 nodemon
+RUN npm install -g typescript nodemon
 
 WORKDIR /usr/src/andes/
 
