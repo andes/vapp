@@ -8,7 +8,7 @@ RUN tsc
 
 # APP Build
 FROM andesnqn/app as app 
-RUN if [ "$ENVIRONMENT" = "production" ] ; then npm run ng -- build --prod; else npm run ng -- build; fi
+RUN if [ "$ENVIRONMENT" = "production" ] ; then npm run ng -- build --prod; else  npm run ng -- build --env=test --aot=false; fi
 
 FROM node:${NODE_VERSION}
 
