@@ -32,16 +32,17 @@ docker build -t andesnqn/vapp .
 
 or 
 
+# Build App on testing
 docker build -t andesnqn/vapp --build-arg ENVIRONMENT=develop .
 ```
 
-### Run images
+### Run image in container
 
 ```bash
 docker run  -p  80:80  --rm --name andes_vapp andesnqn/vapp
 ```
 
-### Run images for developtment
+### Others commands
 
 ```bash
 
