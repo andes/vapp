@@ -27,7 +27,7 @@ app.all('*', (req: any, res: any) => {
 });
 
 // Inicia el servidor
-let server = app.listen(80, function () {
+let server = app.listen(process.env.PORT || 80, function () {
     console.log('Inicio de ANDES en el puerto 80');
 });
 Websockets.initialize(server);
