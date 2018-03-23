@@ -14,6 +14,7 @@ var app = express();
 // Inicializa la APP
 app.use(express.static('../app/dist'));
 // Inicializa la API
+/* tslint:disable */
 initialize_1.initAPI(app);
 // Permite routing de HTML5 / Angular
 app.all('*', function (req, res) {
