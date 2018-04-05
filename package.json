@@ -1,17 +1,16 @@
 {
     "name": "vapp",
-    "version": "1.1.0",
+    "version": "2.4.0",
     "description": "Servidor web principal para Andes",
     "main": "index.js",
     "dependencies": {
         "@types/express": "^4.0.35",
         "@types/node": "^6.0.42",
-        "express": "^4.14.0"
+        "express": "^4.14.0",
+        "typescript": "^2.6.2"
     },
     "scripts": {
-        "startNode": "tsc && gulp && concurrently \"npm run node\" ",
-        "start": "concurrently \"npm run tsc:w\" \"npm run node\" ",
-        "node": "nodemon ./index.js",
+        "start": "node index.js",
         "tsc": "tsc",
         "tsc:w": "tsc -w"
     },

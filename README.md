@@ -9,6 +9,10 @@ Servidor web para ANDES. Permite integrar APP y API es un único servicio.
 ### Instalar dependencias
 
 ```bash
+git clone https://github.com/andes/api
+git clone https://github.com/andes/app
+git clone https://github.com/andes/vapp
+
 cd vapp
 npm install
 ```
@@ -16,5 +20,34 @@ npm install
 ### Iniciar el servidor
 
 ```bash
-npm start
+node index.js
+```
+
+## Docker
+
+### Build images
+
+```bash
+docker build -t andesnqn/vapp .
+
+or 
+
+# Build App on testing
+docker build -t andesnqn/vapp --build-arg ENVIRONMENT=develop .
+```
+
+### Run image in container
+
+```bash
+docker run  -p  80:80  --rm --name andes_vapp andesnqn/vapp
+```
+
+### Others commands
+
+```bash
+
+docker stop andes_vapp
+
+docker exec andes_app node index.js
+
 ```
