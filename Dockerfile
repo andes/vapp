@@ -1,12 +1,14 @@
 
-ARG NODE_VERSION=8.9-alpine
+ARG NODE_VERSION=8-alpine
+ARG API_VERSION=master
+ARG APP_VERSION=master
 
 # API Build
-FROM andesnqn/api as api
+FROM andesnqn/api:$API_VERSION as api
 RUN npm run tsc
 
 # APP Build
-FROM andesnqn/app as app 
+FROM andesnqn/app:$APP_VERSION as app 
 ARG ENVIRONMENT=production
 RUN if [ "$ENVIRONMENT" = "production" ] ; then npm run build:prod; else  npm run build:test; fi
 
